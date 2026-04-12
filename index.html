@@ -1,47 +1,56 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人職涯導航 - 測驗結果</title>
+    <title>個人職涯導航 - 關於我</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 font-sans">
-    <nav class="bg-indigo-700 text-white p-4 sticky top-0 z-50 shadow-md">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <span class="font-bold text-xl">My MIS Career</span>
-            <div class="space-x-4 text-sm md:text-base">
-                <a href="index.html" class="underline">測驗結果</a>
-                <a href="job.html" class="hover:text-indigo-200">目標職缺</a>
-                <a href="resume.html" class="hover:text-indigo-200">自傳履歷</a>
-                <a href="plan.html" class="hover:text-indigo-200">未來規劃</a>
+    <nav class="bg-indigo-600 p-4 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="text-xl font-bold">MIS 職涯專案</span>
+            <div class="space-x-4">
+                <a href="index.html" class="hover:text-indigo-200 border-b-2 border-white">關於我</a>
+                <a href="RSC.html" class="hover:text-indigo-200">測驗結果</a>
+                <a href="mis.html" class="hover:text-indigo-200">目標職缺</a>
+                <a href="introduce.html" class="hover:text-indigo-200">自傳履歷</a>
             </div>
         </div>
     </nav>
 
-    <header class="py-16 bg-white text-center border-b">
-        <h1 class="text-4xl font-extrabold text-slate-800">職涯興趣測驗結果</h1>
-        <p class="text-slate-500 mt-4 text-lg">探索自我，找尋資訊管理的核心職能</p>
+    <header class="py-20 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-center">
+        <img src="https://via.placeholder.com/150" alt="個人照" class="w-32 h-32 rounded-full mx-auto border-4 border-white mb-4">
+        <h1 class="text-4xl font-extrabold">我是 [你的名字]</h1>
+        <p class="mt-2 text-lg">資訊管理系大二學生 | 未來 MIS 系統工程師</p>
     </header>
 
-    <section class="max-w-4xl mx-auto py-12 px-6">
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
-                <div class="text-3xl mb-2">🛠️</div>
-                <h2 class="text-xl font-bold text-indigo-600">R 實作型</h2>
-                <p class="text-gray-600 mt-2">喜歡排除硬體故障、維護伺服器與網路佈線。</p>
+    <main class="container mx-auto py-12 px-4">
+        <section class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md">
+            <h2 class="text-2xl font-bold border-l-4 border-indigo-600 pl-3 mb-4">個人簡介</h2>
+            <p class="text-gray-600 leading-relaxed">
+                目前就讀於資訊管理系二年級，對於企業資訊系統的運作架構與網路安全有濃厚興趣。
+                我喜歡從邏輯中找尋解決問題的方法，並享受優化流程帶來的成就感。
+            </p>
+            <div class="grid md:grid-cols-2 gap-4 mt-6">
+                <div class="bg-indigo-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-indigo-700">目前技能</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700">
+                        <li>Python / Java 基礎程式設計</li>
+                        <li>MySQL 資料庫管理</li>
+                        <li>基礎計算機網路架構</li>
+                    </ul>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h3 class="font-bold text-purple-700">學習中</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700">
+                        <li>Linux 系統管理</li>
+                        <li>Docker 容器化技術</li>
+                        <li>雲端基礎架構 (AWS)</li>
+                    </ul>
+                </div>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
-                <div class="text-3xl mb-2">🔍</div>
-                <h2 class="text-xl font-bold text-indigo-600">I 研究型</h2>
-                <p class="text-gray-600 mt-2">擅長邏輯分析，診斷系統異常並優化自動化腳本。</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
-                <div class="text-3xl mb-2">📋</div>
-                <h2 class="text-xl font-bold text-indigo-600">C 常規型</h2>
-                <p class="text-gray-600 mt-2">對資料備份、系統稽核與資安 SOP 具備高度嚴謹性。</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 </body>
 </html>
