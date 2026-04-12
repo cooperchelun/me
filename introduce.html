@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>張哲綸 | 個人介紹</title>
+    <title>個人介紹 | 張哲綸</title>
     <style>
         * {
             margin: 0;
@@ -106,7 +106,7 @@
         .avatar-placeholder {
             width: 100%;
             height: 100%;
-            background: linear-gradient(145deg, #7c8ba0, #4b5563);
+            background: linear-gradient(145deg, #3b82f6, #1e40af);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -179,7 +179,7 @@
             border: 1px solid #eef2ff;
         }
 
-        /* 個人資訊純文字區塊（無格子/卡片樣式，乾淨文字） */
+        /* 個人資訊純文字區塊 */
         .contact-info {
             background: #ffffff;
             border-radius: 1.5rem;
@@ -212,7 +212,7 @@
             word-break: break-word;
         }
 
-        /* 返回首頁按鈕區域 (僅顯示「返回首頁」無檔案名稱) */
+        /* 返回首頁按鈕區域 */
         .action-footer {
             margin-top: 2rem;
             padding-top: 1.5rem;
@@ -278,13 +278,17 @@
             .contact-info {
                 padding: 1rem;
             }
+            .action-footer {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+            .btn-home {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
-            .btn-home {
-                width: 100%;
-                justify-content: center;
-            }
             .contact-label {
                 min-width: 70px;
             }
@@ -309,14 +313,12 @@
 <body>
 <div class="full-card">
     <div class="content-spacious">
-        <!-- 頭部：圓形頭像（左上角強烈視覺） + 姓名區域 -->
+        <!-- 頭部：圓形頭像 + 姓名區域 -->
         <div class="hero-section">
             <div class="avatar-circle" id="avatarWrap">
-                <!-- 依照需求將 photo.png 改為 me.jpg -->
-                <img class="avatar-img" src="me.jpg" alt="張哲綸個人照片" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img class="avatar-img" src="photo.png" alt="個人照片" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="avatar-placeholder" style="display: none;">
-                    📷
-                    <span style="font-size: 12px;">me.jpg</span>
+                    <span style="font-size: 2.2rem; font-weight: 600;">ZC</span>
                 </div>
             </div>
             <div class="intro-headline">
@@ -329,7 +331,7 @@
             </div>
         </div>
 
-        <!-- 自我介紹區塊 (貼近學生身份) -->
+        <!-- 自我介紹區塊 -->
         <div class="section">
             <div class="section-title">
                 <span>📄 自我簡介</span>
@@ -341,7 +343,7 @@
             </div>
         </div>
 
-        <!-- 個人資訊：純文字顯示 電話 / email / 家鄉 (刪除不必要的卡片樣式，僅乾淨文字) -->
+        <!-- 個人資訊區塊 -->
         <div class="section">
             <div class="section-title">
                 <span>📌 個人資訊</span>
@@ -362,15 +364,9 @@
             </div>
         </div>
 
-        <!-- 注意：⚙️ 核心技术栈 區塊已完全刪除，符合要求 -->
-
-        <!-- 返回首頁按鈕：只顯示「返回首頁」，不帶 about.html 路徑文字，連結指向首頁（此處為 index.html 自身） -->
+        <!-- 按鈕區域：返回首頁 -->
         <div class="action-footer">
-            <!-- 因為現在這個頁面本身就是 index.html (about.html 已改為 index.html)，
-                 按鈕指向 index.html 會重新整理目前頁面，但保持語意為回首頁。 
-                 另外也可以設定為 './' 或是當前頁面，但為了符合期望「返回首頁」，我們仍然保留 index.html，
-                 使用者點擊後即重新載入個人介紹頁面 (等同首頁)。 -->
-            <a href="index.html" class="btn-home" id="homeButton">
+            <a href="index.html" class="btn-home">
                 🏠 返回首頁
             </a>
             <div class="small-hint">
@@ -382,7 +378,7 @@
 
 <script>
     (function() {
-        // 處理 me.jpg 的優雅後備顯示（圓形頭像區域）
+        // 處理 photo.png 的優雅後備顯示（圓形頭像區域）
         const avatarImg = document.querySelector('.avatar-img');
         const placeholderDiv = document.querySelector('.avatar-placeholder');
         
@@ -391,24 +387,11 @@
                 avatarImg.style.display = 'none';
                 if (placeholderDiv) {
                     placeholderDiv.style.display = 'flex';
-                    // 美觀佔位內容 (顯示 me.jpg 提示)
-                    placeholderDiv.innerHTML = `
-                        <div style="text-align: center;">
-                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="8" r="4" stroke="white" stroke-width="1.2" fill="#a0afc3"/>
-                                <path d="M5 20V19C5 15.6863 7.68629 13 11 13H13C16.3137 13 19 15.6863 19 19V20" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-                            </svg>
-                            <p style="font-size: 10px; margin-top: 5px;">me.jpg</p>
-                        </div>
-                    `;
-                    placeholderDiv.style.flexDirection = 'column';
-                    placeholderDiv.style.justifyContent = 'center';
                 }
             }
         };
         
         if (avatarImg) {
-            // 檢查圖片是否已經載入失敗或無效
             if (avatarImg.complete && avatarImg.naturalWidth === 0) {
                 showFallback();
             } else {
@@ -416,26 +399,6 @@
             }
         } else if (placeholderDiv) {
             placeholderDiv.style.display = 'flex';
-        }
-        
-        // 讓返回首頁按鈕單純導回首頁 (此時本身就是 index.html，可增加輕微平滑滾動或防止空跳)
-        const homeBtn = document.querySelector('#homeButton');
-        if (homeBtn) {
-            homeBtn.addEventListener('click', (e) => {
-                // 如果當前已經在 index.html，點擊時可以簡單重新載入頁面，但為了更好的體驗，
-                // 避免無效刷新，也可以不做特殊處理，但使用者預期回到首頁，目前頁面即首頁，
-                // 所以可以平滑滾動至頂端 (象徵性「返回」)
-                // 但 href 維持 index.html 也能正確重載，沒有問題。以下增加輕巧體驗:
-                // 如果連結的 href 與當前頁面路徑相同（只是 hash 或參數），則平滑滾動至頂端。
-                const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-                const targetPath = 'index.html';
-                if (currentPath === targetPath || (currentPath === '' && targetPath === 'index.html')) {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    // 也可以加一點提示效果
-                }
-                // 若處於不同路徑則正常導航
-            });
         }
     })();
 </script>
